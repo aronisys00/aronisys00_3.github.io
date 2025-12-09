@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    
+    <style>
+    body {
+        background-color: #A50000;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    /* === 상단 메뉴 레이아웃 === */
+    header {
+        background-color: #790000; 
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        position: sticky; 
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo a {
+        font-size: 1.8em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFD700;
+        font-family: 'Beau Rivage', cursive;
+    }
+    .logo a:hover, .logo a.active {
+        color: #FFD700;
+    }
+    .top-menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .top-menu a:hover, .top-menu a.active {
+        background-color: #FFD700;
+        color: #A50000;
+    }
+
+    /* === 메인 컨텐츠 공통 === */
+    .page-content {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1); 
+        border-radius: 15px;
+        min-height: 60vh;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 3.5em; 
+        font-weight: 700; 
+        color: #FFD700;
+        margin-bottom: 40px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 50px;
+
+    }
+
+    /* === PAGE1 === */
+
+    .carol-item-list {
+        margin-top: 20px;
+    }
+
+    .carol-list-item {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .carol-list-item:last-child {
+        border-bottom: none;
+    }
+
+    .carol-image-area {
+        width: 150px;
+        height: 150px;
+        margin-right: 70px;
+        background-color: #D3D3D3;
+        border-radius: 8px;
+        flex-shrink: 0;
+        display: flex; justify-content: center; align-items: center;
+        color: #A50000;
+        font-weight: bold;
+    }
+
+    .carol-image-area img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        border-radius: 8px;
+    }
+
+    .carol-intro {
+        margin-right: 90px;
+    }
+
+    .carol-intro h3 {
+        color: white;
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.5em;
+    }
+
+    .carol-intro p {
+        color: #fffbeb;
+        font-size: 16px;
+    }
+
+    .carol-player-area {
+        width: 150px;
+        text-align: right;
+        flex-shrink: 0;
+
+        
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .play-button {
+        background-color: #FFD700;
+        color: #A50000;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    footer { 
+        text-align: center; 
+        padding: 15px; 
+        background-color: #790000; 
+        margin-top: 40px; }
+
+    </style>
+    <body>
+    </head>
+        <body>
+            <header>
+                <div class="logo">
+                    <a href="index.html" class="active">Waiting for Christmas</a>
+                    </div> 
+                    <nav class="top-menu"> 
+                    <a href="page1-t2.html">CALOL</a>
+                    <a href="page2-t1.html">BAKING</a>
+                    <a href="page3.html">MOVIE</a>
+                    <a href="page4.html">LETTER</a>
+                    <a href="page5.html">GALLERY</a>
+                </nav>
+            </header>
+
+            <main class="page-content">
+                <h1 class="page-title">MY CALOL</h1>
+                
+                <section class="carol-item-list">
+            
+            <div class="carol-list-item">
+                <div class="carol-image-area">
+                    <img src="m1.jpg">
+                </div>
+                <div class="carol-intro">
+                    <h3>Piano Man(Billy Joel)</h3>
+                    <p>어린시절이 떠오르게하는 노래에요.가사도 좋고 멜로디는 더 좋아요.마음이 편안해지는걸 느낄수 있어요.</p>
+                </div>
+                <div class="carol-player-area">
+                    <button class="play-button" onclick="toggleAudio('audio_piano', this)">
+                        ▶️ 사운드 재생
+                    </button>
+                    <audio id="audio_piano" src="Piano Man.mp3" style="display:none;"></audio>
+                </div>
+            </div>
+
+            <div class="carol-list-item">
+                <div class="carol-image-area">
+                    <img src="m3.jpg">
+                </div>
+                <div class="carol-intro">
+                    <h3>I Saw Mommy Kissing Santa Claus(Jackson 5)</h3>
+                    <p>재밌는 가사와 독특한 사운드가 마음에 들어요.듣다보면 미소가 나오는 곡이에요.정말 강추합니다.들어보세요!</p>
+                </div>
+                <div class="carol-player-area">
+                    <button class="play-button" onclick="toggleAudio('audio_mommy', this)">
+                        ▶️ 사운드 재생
+                    </button>
+                    <audio id="audio_mommy" src="I Saw Mommy Kissing Santa Claus.mp3" style="display:none;"></audio>
+                </div>
+            </div>
+
+            <div class="carol-list-item">
+                <div class="carol-image-area">
+                    <img src="m2.jpg">
+                </div>
+                <div class="carol-intro">
+                    <h3>Up On The House Top(Gene Autry)</h3>
+                    <p>친구와 같이 따라부르게되는 중독적인 가사가 특징이에요.한번들으면 하루종일 따라부르고 있어요.</p>
+                </div>
+                <div class="carol-player-area">
+                    <button class="play-button" onclick="toggleAudio('audio_house', this)">
+                        ▶️ 사운드 재생
+                    </button>
+                    <audio id="audio_house" src="Up On The House Top.mp3" style="display:none;"></audio>
+                </div>
+            </div>
+
+            <div class="carol-list-item">
+                <div class="carol-image-area">
+                    <img src="m5.jpg">
+                </div>
+                <div class="carol-intro">
+                    <h3>Mele Kalikimaka(Bing Crosby)</h3>
+                    <p>뭔가 스폰지밥 비키니시티를 떠오르게 해요.신나는 가사와 스폰지밥이 된느낌(?)을 느낄수 있어요.</p>
+                </div>
+                <div class="carol-player-area">
+                    <button class="play-button" onclick="toggleAudio('audio_mele', this)">
+                        ▶️ 사운드 재생
+                    </button>
+                    <audio id="audio_mele" src="Mele Kalikimaka.mp3" style="display:none;"></audio>
+                </div>
+            </div>
+
+            <div class="carol-list-item">
+                <div class="carol-image-area">
+                    <img src="m4.jpg">
+                </div>
+                <div class="carol-intro">
+                    <h3>You're a Mean One Mr.Grinch(Thurl Ravenscroft)</h3>
+                    <p>그린치가 보고싶어지는 캐롤이에요.뮤지컬을 보고있는듯한 기분을 느낄수 있어요.</p>
+                </div>
+                <div class="carol-player-area">
+                    <button class="play-button" onclick="toggleAudio('audio_grinch', this)">
+                        ▶️ 사운드 재생
+                    </button>
+                    <audio id="audio_grinch" src="You're a Mean One, Mr. Grinch.mp3" style="display:none;"></audio>
+                </div>
+            </div>
+                    
+        </section>
+            </main>
+
+            <footer>
+                <div class="footer-content">© 2025 윤서영 (22561066)</div>
+            </footer>
+        </body>
+        </html>
+        <script>/*ai도움받음*/
+                function toggleAudio(audioId, buttonElement) {
+                    var audio = document.getElementById(audioId);
+
+                    if (audio.paused) {
+                        audio.play();
+                        if (buttonElement) {
+                            buttonElement.textContent = '⏸️ 일시 정지';
+                        }
+                    } else {
+                        audio.pause();
+                        if (buttonElement) {
+                            buttonElement.textContent = '▶️ 사운드 재생';
+                        }
+                    }
+                }
+        </script>
+        
+    </body>
+    </html>
+   

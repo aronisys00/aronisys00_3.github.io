@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #A50000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #790000; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: sticky; 
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo a {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #FFD700;
+            font-family: 'Beau Rivage', cursive;
+        }
+        .logo a:hover, .logo a.active {
+            color: #FFD700;
+        }
+        .top-menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .top-menu a:hover, .top-menu a.active {
+            background-color: #FFD700;
+            color: #A50000;
+        }
+
+        /* === 메인 컨텐츠 공통 === */
+            .page-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1); 
+            border-radius: 15px;
+            min-height: 60vh;
+            }
+
+            .page-title {
+                text-align: center;
+                font-size: 3.5em; 
+                font-weight: 700; 
+                color: #FFD700;
+                margin-bottom: 40px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+                padding-bottom: 50px;
+
+            }
+
+            /* === PAGE 5 === */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .gallery-image-item {
+            width: 280px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.2); 
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .closing-message {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.4em;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background-color: #790000; 
+            margin-top: 40px; }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="logo">
+            <a href="index.html" class="active">Waiting for Christmas</a>
+            </div> 
+            <nav class="top-menu"> 
+            <a href="page1-t2.html">CALOL</a>
+            <a href="page2-t1.html">BAKING</a>
+            <a href="page3.html">MOVIE</a>
+            <a href="page4.html">LETTER</a>
+            <a href="page5.html">GALLERY</a>
+        </nav>
+    </header>
+    
+    <main class="page-content">
+        <h1 class="page-title">GALLERY</h1>
+
+        <section class="gallery-section">
+            <div class="gallery-container">
+                
+                <div class="gallery-image-item">
+                    <img src="b9.png">
+                </div>
+                
+                <div class="gallery-image-item">
+                    <img src="b8.jpg">
+                </div>
+                
+                <div class="gallery-image-item">
+                    <img src="b7.jpg">
+                </div>
+                
+                <div class="gallery-image-item">
+                    <img src="b5.jpg">
+                </div>
+
+                <div class="gallery-image-item">
+                    <img src="b6.jpg">
+                </div>
+
+                <div class="gallery-image-item">
+                    <img src="b23.png">
+                </div>
+
+                <div class="gallery-image-item">
+                    <img src="b4.jpg">
+                </div>
+
+                <div class="gallery-image-item">
+                    <img src="b1.jpg">
+                </div>
+                
+                </div>
+            
+            <p class="closing-message">
+                쿠키를 만들며 다가오는 크리스마스가 너무 기다려집니다. 모두 행복한 연말 되세요! 🎄
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer_box">
+            <p>© 2025 윤서영 (22561066)</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

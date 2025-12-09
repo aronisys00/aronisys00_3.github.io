@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    
+    <style>
+    body {
+        background-color: #A50000;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    /* === 상단 메뉴 레이아웃 === */
+    header {
+        background-color: #790000; 
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        position: sticky; 
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo a {
+        font-size: 1.8em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFD700;
+        font-family: 'Beau Rivage', cursive;
+    }
+    .logo a:hover, .logo a.active {
+        color: #FFD700;
+    }
+    .top-menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .top-menu a:hover, .top-menu a.active {
+        background-color: #FFD700;
+        color: #A50000;
+    }
+
+    /* === 메인 컨텐츠 공통 === */
+        .page-content {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1); 
+        border-radius: 15px;
+        min-height: 60vh;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3.5em; 
+            font-weight: 700; 
+            color: #FFD700;
+            margin-bottom: 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 50px;
+
+        }
+    /* === PAGE 4 === */
+    .letter-section {
+        text-align: center;
+        padding: 20px;
+    }
+    .gift-box-image {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 30px;
+        background-color: #FFD700;
+        border-radius: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: #A50000;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+    .gift-box-image:hover {
+        transform: scale(1.05);
+    }
+    #my-letter {
+        width: 80%;
+        min-height: 200px;
+        padding: 15px;
+        font-size: 1.1em;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+        margin-bottom: 15px;
+        resize: vertical;
+    }
+    .action-button {
+        background-color: #FFD700;
+        color: #A50000;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .saved-letter-box {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px dashed #FFD700;
+        border-radius: 10px;
+    }
+    footer { 
+        text-align: center; 
+        padding: 15px; 
+        background-color: #790000; 
+        margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" class="active">Waiting for Christmas</a>
+            </div> 
+            <nav class="top-menu"> 
+            <a href="page1-t2.html">CALOL</a>
+            <a href="page2-t1.html">BAKING</a>
+            <a href="page3.html">MOVIE</a>
+            <a href="page4.html">LETTER</a>
+            <a href="page5.html">GALLERY</a>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <h1 class="page-title">LETTER</h1>
+
+        <section class="letter-section" style="text-align: center;">
+            
+            <div class="gift-box-area">
+                <div class="gift-box-image" onclick="showSavedLetter()">
+                    <img src="box.png">
+                </div>
+            </div>
+
+            <div id="writing-area" style="display: flex; flex-direction: column; align-items: center;">
+                <p><b>올해를 돌아보며 내년의 나에게 편지를 작성해 보세요.</b></p>
+                <textarea id="my-letter" placeholder="편지 내용을 작성해 보세요..."></textarea>
+                <button onclick="saveLetter()" class="action-button">편지 입력/저장</button>
+            </div>
+            
+            <div id="saved-letter" style="display:none;" class="saved-letter-box">
+                <h3 style="text-align: center; color: #FFD700;">나에게 온 크리스마스 편지</h3>
+                <p id="saved-content" style="white-space: pre-wrap; line-height: 1.8; padding: 10px;"></p>
+                <button onclick="editLetter()" class="action-button edit-button">다시 쓰기</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer_box">
+            <p>© 2025 윤서영 (22561066)</p>
+        </div>
+    </footer>
+    
+    <script>/*ai도움받음*/
+        function saveLetter() {
+            const letterContent = document.getElementById('my-letter').value.trim();
+            if (letterContent === "") {
+                alert("편지 내용을 입력해주세요.");
+                return;
+            }
+            localStorage.setItem('christmasLetter', letterContent);
+            alert('편지가 선물 상자에 안전하게 저장되었습니다!');
+            document.getElementById('my-letter').value = "";
+        }
+
+        function showSavedLetter() {
+            const savedContent = localStorage.getItem('christmasLetter');
+            const writingArea = document.getElementById('writing-area');
+            const savedLetterDiv = document.getElementById('saved-letter');
+            
+            if (savedContent) {
+                writingArea.style.display = 'none';
+                document.getElementById('saved-content').innerHTML = savedContent.replace(/\n/g, '<br>');
+                savedLetterDiv.style.display = 'block';
+            } else {
+                alert('아직 선물 상자에 편지가 들어있지 않아요. 편지를 작성해주세요!');
+                writingArea.style.display = 'flex';
+                savedLetterDiv.style.display = 'none';
+            }
+        }
+
+        function editLetter() {
+            const savedContent = localStorage.getItem('christmasLetter');
+            document.getElementById('my-letter').value = savedContent;
+            document.getElementById('saved-letter').style.display = 'none';
+            document.getElementById('writing-area').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
